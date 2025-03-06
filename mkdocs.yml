@@ -1,13 +1,14 @@
 site_name: Documentation
-site_description: Documentation for k0rdent.
+site_description: Documentation for k0rdent
 site_author: Mirantis, Inc.
 
 docs_dir: docs/
-repo_name: GitHub
-repo_url: https://github.com/k0rdent/kcm
+repo_name: k0rdent docs
+repo_url: https://github.com/k0rdent/docs
 
 copyright:
   Copyright &copy; 2025 The k0rdent authors | Documentation distributed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode.txt">CC-BY-4.0</a>.
+  -- <a href="#__consent">Change cookie settings</a>
 
 theme:
   name: "material"
@@ -15,7 +16,7 @@ theme:
   language: "en"
   custom_dir: docs/custom_theme
 
-  favicon: img/favicon-32x32.png
+  favicon: img/k0rdent-logo-mark-inverted.svg
   logo: img/k0rdent-logo-horizontal-inverted.svg
   
   palette:
@@ -27,14 +28,28 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
+
   features:
     - toc.autohide
     - search.suggest
     - search.highlight
     - content.code.copy
+    - navigation.tracking   # Anchor tracking
+    - toc.follow            # Sidebar is automatically scrolled so that the active anchor is always visible
+    - search.suggest        # Search suggestions
+    - search.highlight      # Search highlights all occurrences after following the link
+    - content.action.edit
+    - content.action.view
+    - navigation.path       # Not working, for sponsors only
+    - navigation.indexes
+    # - navigation.tabs
+    # - navigation.tabs.sticky
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/feedback.js
 
 plugins:
   - search
@@ -59,10 +74,10 @@ nav:
     - Why k0rdent?: why-k0rdent.md
     - k0rdent architecture: k0rdent-architecture.md
   - QuickStarts:
-    - Guide to Quickstarts: guide-to-quickstarts.md
-    - Set up Management Node and Cluster: quickstart-1-mgmt-node-and-cluster.md
-    - Configure and Deploy to AWS: quickstart-2-aws.md
-    - Configure and Deploy to Azure: quickstart-2-azure.md
+    - quickstarts/index.md
+    - Set up Management Node and Cluster: quickstarts/quickstart-1-mgmt-node-and-cluster.md
+    - Configure and Deploy to AWS: quickstarts/quickstart-2-aws.md
+    - Configure and Deploy to Azure: quickstarts/quickstart-2-azure.md
   - Administrator Guide:
     - Before you start: admin-before.md
     - Installing k0rdent: admin-installation.md
@@ -143,3 +158,28 @@ extra:
   docsVersionInfo:
     k0rdentVersion: 0-1-0
     k0rdentDotVersion: 0.1.0
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - accept
+      - manage
+  analytics: 
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/heart
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/heart-broken
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/k0rdent/docs/issues/new" target="_blank" rel="noopener">feedback form</a>.
